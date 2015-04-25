@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1B03C36-1349-4D1A-8F3A-C4932E356ED6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TwitchCSharp</RootNamespace>
+    <AssemblyName>TwitchCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.8\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\TwitchAuthenticatedClient.cs" />
+    <Compile Include="Enums\IPageList.cs" />
+    <Compile Include="Enums\SortType.cs" />
+    <Compile Include="Enums\SortDirection.cs" />
+    <Compile Include="Interfaces\ITwitchClient.cs" />
+    <Compile Include="Enums\PeriodType.cs" />
+    <Compile Include="Helpers\DynamicJsonDeserializer.cs" />
+    <Compile Include="Helpers\PagedList.cs" />
+    <Compile Include="Helpers\PagingInfo.cs" />
+    <Compile Include="Helpers\RequestExtensions.cs" />
+    <Compile Include="Helpers\TwitchListConverter.cs" />
+    <Compile Include="Models\Authorization.cs" />
+    <Compile Include="Models\Badge.cs" />
+    <Compile Include="Models\BadgeResult.cs" />
+    <Compile Include="Models\Block.cs" />
+    <Compile Include="Models\Emoticon.cs" />
+    <Compile Include="Models\Featured.cs" />
+    <Compile Include="Models\FollowedChannel.cs" />
+    <Compile Include="Models\Ingest.cs" />
+    <Compile Include="Models\RootResult.cs" />
+    <Compile Include="Models\Stream.cs" />
+    <Compile Include="Models\StreamResult.cs" />
+    <Compile Include="Models\StreamSummary.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Models\TopGame.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\Lists\CountableList.cs" />
+    <Compile Include="Models\Follower.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Lists\LinkList.cs" />
+    <Compile Include="Models\Channel.cs" />
+    <Compile Include="Models\Lists\TwitchList.cs" />
+    <Compile Include="Models\Notification.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\ScaledImage.cs" />
+    <Compile Include="Models\Team.cs" />
+    <Compile Include="Models\TwitchObject.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Video.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Clients\TwitchReadOnlyClient.cs" />
+    <Compile Include="Helpers\TwitchConnection.cs" />
+    <Compile Include="Helpers\TwitchHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
