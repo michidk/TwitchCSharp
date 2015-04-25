@@ -1,11 +1,14 @@
 # Twitch C# Wrapper for the Twitch v3 REST API
 
+
 ##Documentation: 
 https://github.com/justintv/Twitch-API
 
 
+
+
 ##Example:
-```c
+```c#
 TwitchConnection conn = new TwitchConnection(name, clientId, oAuthToken);
 TwitchAuthenticatedClient client = new TwitchAuthenticatedClient(conn);
 
@@ -17,12 +20,22 @@ foreach (Follower follower in client.GetFollowers("michidk").List)
 }
 ```
 
+
+
+
 ##used .dll's:
 http://restsharp.org/
+
 http://www.newtonsoft.com/json
 
 
+
+
+##License
+
+
 Used structure and some code from https://github.com/gibletto
+
 
 
    Copyright 2015 michidk
