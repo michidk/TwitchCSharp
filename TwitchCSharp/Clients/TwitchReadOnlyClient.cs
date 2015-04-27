@@ -9,7 +9,7 @@ namespace TwitchCSharp.Clients
     public class TwitchReadOnlyClient : ITwitchClient
     {
 
-        public RestClient restClient;
+        public readonly RestClient restClient;
 
         public TwitchReadOnlyClient() : this(TwitchHelper.twitchApiUrl)
         {

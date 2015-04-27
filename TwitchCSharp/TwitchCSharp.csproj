@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\TwitchAuthenticatedClient.cs" />
+    <Compile Include="Clients\TwitchNamedClient.cs" />
     <Compile Include="Enums\IPageList.cs" />
     <Compile Include="Enums\SortType.cs" />
     <Compile Include="Enums\SortDirection.cs" />
