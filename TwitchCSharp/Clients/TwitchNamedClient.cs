@@ -16,9 +16,9 @@ namespace TwitchCSharp.Clients
             this.username = username;
         }
 
-        public Stream GetMyStream()
+        public StreamResult GetMyStream()
         {
-            GetStream(username);
+            return GetStream(username);
         }
 
         public TwitchList<Block> GetBlocks()
