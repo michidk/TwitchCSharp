@@ -49,9 +49,10 @@ Your client id is used to protect the twitch servers from spam. You can create o
 http://www.twitch.tv/settings/connections (scroll to the bottom)
 
 You auth key is used to authenticate you with the twitch servers. To simply generate an authkey, just put into the redirect uri "http://localhost" and visit the following link:
-https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=mghb8yk4nts6btvb56d65n3wknryalg&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
+https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=<INSERT YOUR CLIENT ID HERE>&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
 
-You will be redirected to a url like this: 
+You will be redirected to a url like this:
+
 "http://localhost/#access_token=qxxxxtnc33456quxfghmcpw211s92xgp&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login"
 
 There you have your oauth key: #access_token=qxxxxtnc33456quxfghmcpw211s92xgp
