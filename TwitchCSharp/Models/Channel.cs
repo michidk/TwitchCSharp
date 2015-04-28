@@ -37,7 +37,7 @@ namespace TwitchCSharp.Models
         [JsonProperty("background")]
         public object Background { get; set; }
         [JsonProperty("profile_banner")]
-        public string RrofileBanner { get; set; }
+        public string ProfileBanner { get; set; }
         [JsonProperty("profile_banner_background_color")]
         public string ProfileBannerBackgroundColor { get; set; }
         [JsonProperty("partner")]

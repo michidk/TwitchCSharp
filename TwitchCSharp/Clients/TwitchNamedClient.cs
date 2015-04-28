@@ -55,28 +55,28 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
-        public Response Update(string status = null, string game = null, string delay = null)
+        public Channel Update(string status = null, string game = null, string delay = null)
         {
             var request = GetRequest("channels/{channel}", Method.PUT);
             request.AddUrlSegment("channel", username);
             request.RequestFormat = DataFormat.Json;
             request.AddBody(new { channel = new { status, game, delay } });
-            var response = restClient.Execute<Response>(request);
+            var response = restClient.Execute<Channel>(request);
             return response.Data;
         }
 
-        public Response SetTitle(string title)
+        public Channel SetTitle(string title)
         {
             return Update(title);
         }
 
-        public Response SetGame(string game)
+        public Channel SetGame(string game)
         {
             return Update(null, game);
         }
 
         // only for partnered channels
-        public Response SetDelay(string delay)
+        public Channel SetDelay(string delay)
         {
             return Update(null, null, delay);
         }
