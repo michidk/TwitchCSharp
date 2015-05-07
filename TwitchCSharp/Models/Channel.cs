@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
-    public class Channel : TwitchObject
+    public class Channel
     {
         [JsonProperty("_id")]
         public long Id { get; set; }
