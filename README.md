@@ -48,12 +48,15 @@ client = new TwitchNamedClient(username, authKey, clientId);
 Your client id is used to protect the twitch servers from spam. You can create one here:
 http://www.twitch.tv/settings/connections (scroll to the bottom)
 
-You auth key is used to authenticate you with the twitch servers. To simply generate an authkey, just put into the redirect uri "http://localhost" and visit the following link:
-https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=INSERT_YOUR_CLIENT ID_HERE&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
+You auth key is used to authenticate you with the twitch servers. To simply generate an authkey, just put after "redirect_uri=" "http://localhost", after "client_id=" your client id and visit the following link:
+```
+https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=INSERT_YOUR_CLIENT_ID_HERE&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
+```
 
-Insert your clientid and you will be redirected to a url like this:
-
-"http://localhost/#access_token=qxxxxtnc33456quxfghmcpw211s92xgp&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login"
+You will be redirected to a url like this:
+```
+http://localhost/#access_token=qxxxxtnc33456quxfghmcpw211s92xgp&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
+```
 
 There you have your oauth key: #access_token=qxxxxtnc33456quxfghmcpw211s92xgp
 
