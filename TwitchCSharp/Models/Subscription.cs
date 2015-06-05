@@ -9,7 +9,7 @@ namespace TwitchCSharp.Models
         public string Id { get; set; }
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
-        // user or channel is null. There are two types of subscription: úser subscriptions and channel subscriptions
+        // user or channel is null. There are two types of subscription: user subscriptions and channel subscriptions
         [JsonProperty("user")]
         public User User { get; set; }
         [JsonProperty("channel")]
