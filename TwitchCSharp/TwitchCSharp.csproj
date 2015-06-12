@@ -52,6 +52,7 @@
     <Compile Include="Enums\IPageList.cs" />
     <Compile Include="Enums\SortType.cs" />
     <Compile Include="Enums\SortDirection.cs" />
+    <Compile Include="Helpers\TwitchException.cs" />
     <Compile Include="Interfaces\ITwitchClient.cs" />
     <Compile Include="Enums\PeriodType.cs" />
     <Compile Include="Helpers\DynamicJsonDeserializer.cs" />
