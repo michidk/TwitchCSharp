@@ -3,7 +3,6 @@ using RestSharp;
 using TwitchCSharp.Enums;
 using TwitchCSharp.Helpers;
 using TwitchCSharp.Models;
-using TwitchCSharp.Models.Lists;
 
 namespace TwitchCSharp.Clients
 {
@@ -34,7 +33,7 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
-        // more details that GetUser(myname)
+        // more details than GetUser(myname)
         public User GetMyUser()
         {
             var request = GetRequest("user", Method.GET);
@@ -71,21 +70,21 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
-        public Response Block(string target)
+        public TwitchResponse Block(string target)
         {
             var request = GetRequest("users/{user}/blocks/{target}", Method.PUT);
             request.AddUrlSegment("user", username);
             request.AddUrlSegment("target", target);
-            var response = restClient.Execute<Response>(request);
+            var response = restClient.Execute<TwitchResponse>(request);
             return response.Data;
         }
 
-        public Response Unblock(string target)
+        public TwitchResponse Unblock(string target)
         {
             var request = GetRequest("users/{user}/blocks/{target}", Method.DELETE);
             request.AddUrlSegment("user", username);
             request.AddUrlSegment("target", target);
-            var response = restClient.Execute<Response>(request);
+            var response = restClient.Execute<TwitchResponse>(request);
             return response.Data;
         }
 
@@ -132,12 +131,12 @@ namespace TwitchCSharp.Clients
         }
 
         // Length of commercial break in seconds. Default value is 30. Valid values are 30, 60, 90, 120, 150, and 180. You can only trigger a commercial once every 8 minutes.
-        public Response TriggerCommercial(int length)
+        public TwitchResponse TriggerCommercial(int length)
         {
             var request = GetRequest("channels/{channel}/commercial", Method.POST);
             request.AddUrlSegment("channel", username);
             request.AddParameter("length", length);
-            var response = restClient.Execute<Response>(request);
+            var response = restClient.Execute<TwitchResponse>(request);
             return response.Data;
         }
 
@@ -151,12 +150,12 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
-        public Response Unfollow(string target)
+        public TwitchResponse Unfollow(string target)
         {
             var request = GetRequest("users/{user}/follows/channels/{target}", Method.DELETE);
             request.AddUrlSegment("user", username);
             request.AddUrlSegment("target", target);
-            var response = restClient.Execute<Response>(request);
+            var response = restClient.Execute<TwitchResponse>(request);
             return response.Data;
         }
 
@@ -180,9 +179,11 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
+        //may return true if request failed
         public bool IsSubscriber(string user)
         {
-            return GetSubscriber(user).Status != 404;
+            int state = GetSubscriber(user).Status;
+            return state != 404 && state != 422;
         }
 
         // a channel you subscribed
@@ -210,7 +211,7 @@ namespace TwitchCSharp.Clients
         {
             RestRequest restRequest = new RestRequest(url, method);
             restRequest.AddHeader("Client-ID", clientId);
-            restRequest.AddHeader("Authorization", string.Format("OAuth {0}", oauth));
+            restRequest.AddHeader("Authorization", String.Format("OAuth {0}", oauth));
             return restRequest;
         }
     }

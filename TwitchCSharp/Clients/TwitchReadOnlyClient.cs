@@ -2,7 +2,6 @@
 using TwitchCSharp.Enums;
 using TwitchCSharp.Helpers;
 using TwitchCSharp.Models;
-using TwitchCSharp.Models.Lists;
 
 namespace TwitchCSharp.Clients
 {
@@ -35,14 +34,6 @@ namespace TwitchCSharp.Clients
             var request = GetRequest("channels/{channel}/teams", Method.GET);
             request.AddUrlSegment("channel", channel);
             var response = restClient.Execute<TwitchList<Team>>(request);
-            return response.Data;
-        }
-
-        public LinkList GetChatLinks(string channel)
-        {
-            var request = GetRequest("chat/{channel}", Method.GET);
-            request.AddUrlSegment("channel", channel);
-            var response = restClient.Execute<LinkList>(request);
             return response.Data;
         }
 

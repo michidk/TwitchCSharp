@@ -3,7 +3,7 @@
 namespace TwitchCSharp.Models
 {
     [JsonObject("games")]
-    public class Game : LinkList
+    public class Game
     {
         [JsonProperty("name")]
         public string Name { get; set; }

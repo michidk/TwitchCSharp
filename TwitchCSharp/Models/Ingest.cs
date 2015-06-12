@@ -2,6 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
+    [JsonObject("ingests")]
     public class Ingest
     {
         [JsonProperty("name")]

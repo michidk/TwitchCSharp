@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace TwitchCSharp.Models
 {
     [JsonObject("streams")]
-    public class Stream : LinkList
+    public class Stream
     {
         [JsonProperty("game")]
         public string Game { get; set; }

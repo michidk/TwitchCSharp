@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
+    [JsonObject("token")]
     public class Token
     {
         [JsonProperty("authorization")]

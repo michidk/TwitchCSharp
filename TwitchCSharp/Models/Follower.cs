@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace TwitchCSharp.Models
 {
     [JsonObject("follows")]
-    public class Follower : LinkList
+    public class Follower
     {
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }

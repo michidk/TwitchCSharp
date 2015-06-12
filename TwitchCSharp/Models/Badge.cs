@@ -2,6 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
+    [JsonObject("badges")]
     public class Badge
     {
         [JsonProperty("alpha")]

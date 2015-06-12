@@ -2,7 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
-    public class RootResult : LinkList
+    public class RootResult
     {
         [JsonProperty("token")]
         public Token Token { get; set; }

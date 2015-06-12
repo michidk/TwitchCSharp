@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
-    public class Subscription : TwitchObject
+    [JsonObject("subscriptions")]
+    public class Subscription : TwitchResponse
     {
         [JsonProperty("_id")]
         public string Id { get; set; }

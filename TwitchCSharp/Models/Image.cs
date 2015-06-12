@@ -2,6 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
+    [JsonObject("images")]
     public class Image
     {
         [JsonProperty("emoticon_set")]

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace TwitchCSharp.Models
 {
     [JsonObject("blocks")]
-    public class Block : TwitchObject
+    public class Block
     {
         [JsonProperty("_id")]
         public long Id { get; set; }

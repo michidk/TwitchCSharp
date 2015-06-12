@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
-    public class StreamSummary : TwitchObject
+    public class StreamSummary : TwitchResponse
     {
         [JsonProperty("viewers")]
         public long Viewers { get; set; }

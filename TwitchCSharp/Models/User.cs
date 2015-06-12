@@ -4,7 +4,8 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
-    public class User : TwitchObject
+    [JsonObject("users")]
+    public class User : TwitchResponse
     {
         [JsonProperty("name")]
         public string Name { get; set; }

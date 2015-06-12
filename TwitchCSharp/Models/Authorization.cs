@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
+    [JsonObject("authorization")]
     public class Authorization
     {
         [JsonProperty("created_at")]

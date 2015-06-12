@@ -4,7 +4,6 @@ using System.Reflection;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TwitchCSharp.Models;
-using TwitchCSharp.Models.Lists;
 
 namespace TwitchCSharp.Helpers
 {
@@ -19,13 +18,12 @@ namespace TwitchCSharp.Helpers
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
-            var value = Activator.CreateInstance(objectType) as CountableList;
+            var value = Activator.CreateInstance(objectType) as TwitchResponse;
             var genericArg = objectType.GetGenericArguments()[0];
             var key = genericArg.GetCustomAttribute<JsonObjectAttribute>();
             if (value == null || key == null)
                 return null;
             var jsonObject = JObject.Load(reader);
-            value.Links = SetValue<Dictionary<string, object>>(jsonObject["_links"]);
             value.Total = SetValue<long>(jsonObject["_total"]);
             value.Error = SetValue<string>(jsonObject["error"]);
             value.Message = SetValue<string>(jsonObject["message"]);

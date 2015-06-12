@@ -2,7 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
-    public class StreamResult : TwitchObject
+    public class StreamResult : TwitchResponse
     {
         [JsonProperty("stream")]
         public Stream Stream { get; set; }

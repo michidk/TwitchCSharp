@@ -2,7 +2,7 @@
 
 namespace TwitchCSharp.Models
 {
-    public class BadgeResult : LinkList
+    public class BadgeResult
     {
         [JsonProperty("global_mod")]
         public Badge GlobalMod { get; set; }

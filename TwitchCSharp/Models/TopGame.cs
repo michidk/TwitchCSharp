@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 namespace TwitchCSharp.Models
 {
     [JsonObject("top")]
-    public class TopGame : LinkList
+    public class TopGame
     {
         [JsonProperty("viewers")]
         public long Viewers { get; set; }
