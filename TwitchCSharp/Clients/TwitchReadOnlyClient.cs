@@ -156,6 +156,7 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
+        //stream = null if channel is offline
         public StreamResult GetStream(string channel)
         {
             var request = GetRequest("streams/{channel}", Method.GET);
