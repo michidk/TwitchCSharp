@@ -11,7 +11,7 @@ namespace TwitchCSharp.Helpers
         {
             if (pagingInfo == null) return;
             request.AddParameter("limit", pagingInfo.PageSize);
-            request.AddParameter("offset", pagingInfo.Page - 1);
+            request.AddParameter("offset", pagingInfo.Skip);
         }
     }
 }
