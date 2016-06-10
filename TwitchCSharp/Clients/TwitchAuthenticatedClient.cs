@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using RestSharp;
 using TwitchCSharp.Enums;
 using TwitchCSharp.Helpers;
@@ -10,13 +10,11 @@ namespace TwitchCSharp.Clients
     {
 
         private readonly string oauth;
-        private readonly string clientId;
         private readonly string username;
 
-        public TwitchAuthenticatedClient(string oauth, string clientId) : base()
+        public TwitchAuthenticatedClient(string clientId, string oauth) : base(clientId)
         {
             this.oauth = oauth;
-            this.clientId = clientId;
 
             var user = this.GetMyUser();
             if (user == null || String.IsNullOrWhiteSpace(user.Name))
@@ -210,7 +208,6 @@ namespace TwitchCSharp.Clients
         public RestRequest GetRequest(string url, Method method)
         {
             RestRequest restRequest = new RestRequest(url, method);
-            restRequest.AddHeader("Client-ID", clientId);
             restRequest.AddHeader("Authorization", String.Format("OAuth {0}", oauth));
             return restRequest;
         }
