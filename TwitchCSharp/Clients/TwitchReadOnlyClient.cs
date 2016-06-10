@@ -1,4 +1,4 @@
-﻿using RestSharp;
+using RestSharp;
 using TwitchCSharp.Enums;
 using TwitchCSharp.Helpers;
 using TwitchCSharp.Models;
@@ -10,15 +10,12 @@ namespace TwitchCSharp.Clients
 
         public readonly RestClient restClient;
 
-        public TwitchReadOnlyClient() : this(TwitchHelper.twitchApiUrl)
-        {
-        }
-
-        public TwitchReadOnlyClient(string url)
+        public TwitchReadOnlyClient(string clientID, string url = TwitchHelper.twitchApiUrl)
         {
             restClient = new RestClient(url);
             restClient.AddHandler("application/json", new DynamicJsonDeserializer());
             restClient.AddDefaultHeader("Accept", TwitchHelper.twitchAcceptHeader);
+            restClient.AddDefaultHeader("Client-ID", clientID);
         }
 
         public Channel GetChannel(string channel)
