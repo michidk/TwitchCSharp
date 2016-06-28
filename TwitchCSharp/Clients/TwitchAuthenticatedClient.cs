@@ -8,13 +8,12 @@ namespace TwitchCSharp.Clients
 {
     public class TwitchAuthenticatedClient : TwitchReadOnlyClient, ITwitchClient
     {
-
-        private readonly string oauth;
         private readonly string username;
 
         public TwitchAuthenticatedClient(string clientId, string oauth) : base(clientId)
         {
-            this.oauth = oauth;
+            // Include Authorization header with every request
+            restClient.AddDefaultHeader("Authorization", String.Format("OAuth {0}", oauth));
 
             var user = this.GetMyUser();
             if (user == null || String.IsNullOrWhiteSpace(user.Name))
@@ -203,13 +202,6 @@ namespace TwitchCSharp.Clients
         public bool CanSubscribeToChannel(string channel)
         {
             return GetSubscribedChannel(channel).Status != 422;
-        }
-
-        public RestRequest GetRequest(string url, Method method)
-        {
-            RestRequest restRequest = new RestRequest(url, method);
-            restRequest.AddHeader("Authorization", String.Format("OAuth {0}", oauth));
-            return restRequest;
         }
     }
 }
