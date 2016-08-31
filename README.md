@@ -1,13 +1,13 @@
 # Twitch C# Wrapper for the Twitch v3 REST API
 
+## Note:
+Sadly, I don't have time to maintain this project anymore.
+But do not hesitate to make a pull request if you want to fix/change something :)
 
-##Documentation: 
+## Documentation: 
 https://github.com/justintv/Twitch-API
 
-
-
-
-##Example:
+## Example:
 ```c#
 TwitchNamedClient client = new TwitchNamedClient("michidk", "myOAuthKey", "myClientId");
 
@@ -19,13 +19,9 @@ foreach (Follower follower in client.GetFollowers("michidk").List)
 }
 ```
 
+## Explanation
 
-
-
-##Explanation
-
-
-######Client's
+###### Client
 Currently there are three client classes:
 
 | Class                          | Explanation                                                           |
@@ -36,15 +32,14 @@ Currently there are three client classes:
 
 if you only have the auth-key as input, you would use an AuthenticatedClient to get the username of the associated auth-key. Then you would initialize a NamedClient.
 
-
-######Example
+###### Example
 ```c#
 var tempClient = new TwitchAuthenticatedClient(authKey, clientId);
 string username = tempClient.GetMyChannel().Name;
 client = new TwitchNamedClient(username, authKey, clientId);
 ```
 
-######OAuth Key / Client ID?
+###### OAuth Key / Client ID
 Your client id is used to protect the twitch servers from spam. You can create one here:
 http://www.twitch.tv/settings/connections (scroll to the bottom)
 
@@ -63,21 +58,12 @@ There you have your oauth key: #access_token=qxxxxtnc33456quxfghmcpw211s92xgp
 read more about twitch rest api authentication here:
 https://github.com/justintv/Twitch-API/blob/master/authentication.md
 
+## Dependencies
+- http://restsharp.org/
+- http://www.newtonsoft.com/json
 
-##used .dll's:
-http://restsharp.org/
-
-http://www.newtonsoft.com/json
-
-
-
-
-##License
-
-
-Used structure and some code from https://github.com/gibletto
-
-
+## License
+Used structure and some code pieces from https://github.com/gibletto
 
 Copyright 2015 michidk
 
