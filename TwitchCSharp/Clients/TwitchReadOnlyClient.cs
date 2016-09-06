@@ -37,8 +37,9 @@ namespace TwitchCSharp.Clients
         public TwitchList<Emoticon> GetEmoticons()
         {
             var request = GetRequest("chat/emoticons", Method.GET);
-            var response = restClient.Execute<TwitchList<Emoticon>>(request);
-            return response.Data;
+            var data = restClient.DownloadData(request);
+            var value = System.Text.Encoding.Default.GetString(data);
+            return DynamicJsonDeserializer.Deserialize<TwitchList<Emoticon>>(value);
         }
 
         public BadgeResult GetBadges(string channel)
