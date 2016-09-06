@@ -14,6 +14,7 @@ namespace TwitchCSharp.Clients
         {
             restClient = new RestClient(url);
             restClient.AddHandler("application/json", new DynamicJsonDeserializer());
+            restClient.AddHandler("text/html", new DynamicJsonDeserializer());
             restClient.AddDefaultHeader("Accept", TwitchHelper.twitchAcceptHeader);
             restClient.AddDefaultHeader("Client-ID", clientID);
         }
