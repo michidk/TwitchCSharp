@@ -204,5 +204,6 @@ namespace TwitchCSharp.Clients
         {
             return GetSubscribedChannel(channel).Status != 422;
         }
+
     }
 }

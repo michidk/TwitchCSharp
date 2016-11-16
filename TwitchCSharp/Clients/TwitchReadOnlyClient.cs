@@ -42,6 +42,13 @@ namespace TwitchCSharp.Clients
             return response.Data;
         }
 
+        public TwitchList<EmoticonImage> GetEmoticonImages()
+        {
+            var request = GetRequest("chat/emoticon_images", Method.GET);
+            var response = restClient.Execute<TwitchList<EmoticonImage>>(request);
+            return response.Data;
+        }
+
         public BadgeResult GetBadges(string channel)
         {
             var request = GetRequest("chat/{channel}/badges", Method.GET);

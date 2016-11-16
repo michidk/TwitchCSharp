@@ -65,6 +65,7 @@
     <Compile Include="Models\Badge.cs" />
     <Compile Include="Models\BadgeResult.cs" />
     <Compile Include="Models\Block.cs" />
+    <Compile Include="Models\EmoticonImage.cs" />
     <Compile Include="Models\Emoticon.cs" />
     <Compile Include="Models\Featured.cs" />
     <Compile Include="Models\FollowedChannel.cs" />
