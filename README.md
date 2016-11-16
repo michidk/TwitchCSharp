@@ -19,6 +19,7 @@ The Twitch REST API is documented [here](https://github.com/justintv/Twitch-API)
 To interact with the API you need at least a [client-ID](#oauth-key-/-client-id). Some requests can only be made by authorized users. These also need a [OAuth-key](#oauth-key-/-client-id).
 
 There are three client classes:
+
 | Class                          | Explanation                                                            |
 | ------------------------------ | ---------------------------------------------------------------------- |
 | TwitchReadOnlyClient           | you can use this client without an auth-key to access public data      |
@@ -34,7 +35,8 @@ Your client-ID is used to protect the twitch servers from spam-attacks. You can 
 
 You auth-key is used to authenticate you with the twitch servers. To generate one, just put your client-ID after "client_id=" in the URL and visit the following link:
 ```
-https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=INSERT_YOUR_CLIENT_ID_HERE&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+channel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
+https://api.twitch.tv/kraken/oauth2/authorize?response_type=token&client_id=INSERT_YOUR_CLIENT_ID_HERE&redirect_uri=http://localhost&scope=user_read+user_blocks_edit+user_blocks_read+user_follows_edit+channel_read+c
+hannel_editor+channel_commercial+channel_stream+channel_subscriptions+user_subscriptions+channel_check_subscription+chat_login
 ```
 
 You will be redirected to a url like this:
@@ -46,7 +48,6 @@ You can find your auth-key in the resulting url: `#access_token=qxxxxtnc33456qux
 If you create a service, you have to provide a web-frontend, for the users to get their auth-key. Auth-keys are bound to accounts and should not be shared.
 
 Read more about the Twitch authentication API [here](https://github.com/justintv/Twitch-API/blob/master/authentication.md).
-
 
 ### Example
 ```c#
