@@ -2,9 +2,8 @@
 [![Analytics](https://ga-beacon.appspot.com/UA-63472612-13/readme)](https://github.com/igrigorik/ga-beacon)
 
 ## Note
-If you use Twitch C# Wrapper for your project, please let me know!
-From time to time I will update Twitch C# Wrapper. If there are many projects using this API, I will update it more often.
-If you are interested in a Twitch C# API Wrapper with high level support or Unity 5 integration for the new Twitch v5 API and are willing to pay for it, please [contact me](https://lohr-it.de/contact).
+If you are using Twitch C# Wrapper for your project, please let me know! If there are many projects using this API, I will update it more frequently.
+If you are interested in a Twitch C# API Wrapper with active support or Unity 5 integration for the new Twitch v5 API and are willing to pay for it, please [contact me](https://lohr-it.de/contact).
 
 ## Projects Using Twitch C# Wrapper
 - [Simple Twitch Helper](https://github.com/michidk/SimpleTwitchHelper)
