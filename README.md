@@ -1,9 +1,10 @@
 # Twitch C# Wrapper for the Twitch v3 REST API
-[![Analytics](https://ga-beacon.appspot.com/UA-63472612-13/readme)](https://github.com/igrigorik/ga-beacon)
 
-## Note
+## Notes
 If you are using Twitch C# Wrapper for your project, please let me know! If there are many projects using this API, I will update it more frequently.
 If you are interested in a Twitch C# API Wrapper with active support or Unity 5 integration for the new Twitch v5 API and are willing to pay for it, please [contact me](https://lohr-it.de/contact).
+
+For news & updates, follow me on Twitter: [@miichidk](https://twitter.com/miichidk)
 
 ## Projects Using Twitch C# Wrapper
 - [Simple Twitch Helper](https://github.com/michidk/SimpleTwitchHelper)
@@ -11,7 +12,7 @@ If you are interested in a Twitch C# API Wrapper with active support or Unity 5 
 ## Documentation
 This project is just a wrapper, so that you can interact with the Twitch REST API using C#.
 That means that most of the methods are named and work like requests of the Twitch REST API.
-The Twitch REST API is documented [here](https://github.com/justintv/Twitch-API).
+The Twitch REST API is documented [here](https://dev.twitch.tv/docs/v3).
 
 ## Usage
 ### Client
@@ -46,7 +47,7 @@ http://localhost/#access_token=qxxxxtnc33456quxfghmcpw211s92xgp&scope=user_read+
 You can find your auth-key in the resulting url: `#access_token=qxxxxtnc33456quxfghmcpw211s92xgp`
 If you create a service, you have to provide a web-frontend, for the users to get their auth-key. Auth-keys are bound to accounts and should not be shared.
 
-Read more about the Twitch authentication API [here](https://github.com/justintv/Twitch-API/blob/master/authentication.md).
+Read more about the Twitch authentication API [here](https://dev.twitch.tv/docs/v3/guides/authentication/).
 
 ### Example
 ```c#
@@ -68,8 +69,6 @@ foreach (var follower in client.GetFollowers("michidk").List)
 ## License
 Used some code from [Gibletto](https://github.com/gibletto).
 
-Copyright 2015 Michael Lohr
-
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -81,3 +80,8 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+
+## Misc
+Created 2015 by Michael Lohr
+
+[![Analytics](https://ga-beacon.appspot.com/UA-63472612-13/readme)](https://github.com/igrigorik/ga-beacon)
