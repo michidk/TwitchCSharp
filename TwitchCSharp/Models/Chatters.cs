@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace TwitchCSharp.Models
 {
-    public class Chatter
+    public class Chatters
     {
         [JsonProperty("moderators")] public string[] Moderators;
         [JsonProperty("staff")] public string[] Staff;

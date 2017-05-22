@@ -10,6 +10,6 @@ namespace TwitchCSharp.Models
         [JsonProperty("chatter_count")]
         public int ChatterCount;
         [JsonProperty("chatters")]
-        public Chatter Chatters;
+        public Chatters Chatters;
     }
 }

@@ -48,7 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clients\TwitchAuthenticatedClient.cs" />
-    <Compile Include="Clients\TwitchDataClient.cs" />
+    <Compile Include="Clients\TwitchTmiClient.cs" />
     <Compile Include="Clients\TwitchNamedClient.cs" />
     <Compile Include="Enums\IPageList.cs" />
     <Compile Include="Enums\SortType.cs" />
@@ -66,7 +66,7 @@
     <Compile Include="Models\Badge.cs" />
     <Compile Include="Models\BadgeResult.cs" />
     <Compile Include="Models\Block.cs" />
-    <Compile Include="Models\Chatter.cs" />
+    <Compile Include="Models\Chatters.cs" />
     <Compile Include="Models\EmoticonImage.cs" />
     <Compile Include="Models\Emoticon.cs" />
     <Compile Include="Models\Featured.cs" />
