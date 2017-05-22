@@ -4,6 +4,7 @@ namespace TwitchCSharp.Helpers
 {
     public class TwitchHelper
     {
+        public const string twitchStaticDataUrl = "https://tmi.twitch.tv";
         public const string twitchApiUrl = "https://api.twitch.tv/kraken";
         public const string twitchAcceptHeader = "application/vnd.twitchtv.v3+json";
 
