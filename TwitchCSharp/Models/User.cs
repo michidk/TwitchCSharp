@@ -9,6 +9,8 @@ namespace TwitchCSharp.Models
     {
         [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("type")]
+        public string Type { get; set; }
         [JsonProperty("created_at")]
         public DateTime CreatedAt { get; set; }
         [JsonProperty("updated_at")]

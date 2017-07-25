@@ -6,7 +6,7 @@ using TwitchCSharp.Models;
 
 namespace TwitchCSharp.Clients
 {
-    [Obsolete("This class is deprecated, please use TwitchAuthenticatedClient instead.")]
+    [Obsolete("deprecated, please use TwitchAuthenticatedClient instead")]
     public class TwitchNamedClient : TwitchAuthenticatedClient, ITwitchClient
     {
         private readonly string username;

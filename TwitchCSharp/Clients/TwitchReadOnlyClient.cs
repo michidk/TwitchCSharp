@@ -14,6 +14,7 @@ namespace TwitchCSharp.Clients
         {
             restClient = new RestClient(url);
             restClient.AddHandler("application/json", new DynamicJsonDeserializer());
+            restClient.AddHandler("text/html", new DynamicJsonDeserializer());
             restClient.AddDefaultHeader("Accept", TwitchHelper.twitchAcceptHeader);
             restClient.AddDefaultHeader("Client-ID", clientID);
         }
@@ -38,6 +39,13 @@ namespace TwitchCSharp.Clients
         {
             var request = GetRequest("chat/emoticons", Method.GET);
             var response = restClient.Execute<TwitchList<Emoticon>>(request);
+            return response.Data;
+        }
+
+        public TwitchList<EmoticonImage> GetEmoticonImages()
+        {
+            var request = GetRequest("chat/emoticon_images", Method.GET);
+            var response = restClient.Execute<TwitchList<EmoticonImage>>(request);
             return response.Data;
         }
 

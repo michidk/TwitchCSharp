@@ -15,6 +15,7 @@ namespace TwitchCSharp.Clients
             // Include Authorization header with every request
             restClient.AddDefaultHeader("Authorization", String.Format("OAuth {0}", oauth));
 
+            // automatically fetch user name
             var user = this.GetMyUser();
             if (user == null || String.IsNullOrWhiteSpace(user.Name))
             {
@@ -203,5 +204,6 @@ namespace TwitchCSharp.Clients
         {
             return GetSubscribedChannel(channel).Status != 422;
         }
+
     }
 }
