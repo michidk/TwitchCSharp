@@ -54,7 +54,7 @@ Read more about the Twitch authentication API [here](https://dev.twitch.tv/docs/
 // create a new client with access to the account to the auth-key owner
 var client = new TwitchAuthenticatedClient("client-id", "oauth-key");
 
-client.Follow("michidk");					// the owner of the auth-key will follow the user 'michidk'
+client.Follow("miichidk");					// the owner of the auth-key will follow the user 'michidk'
 
 foreach (var follower in client.GetFollowers("michidk").List)
 {
